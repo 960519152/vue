@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>惠诚心理测评</title>
+    <!--引入bootstrap样式-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!--引入element样式-->
+    <link rel="stylesheet" href="css/element.css">
+     <!--引入自己扩展样式-->
+     <link rel="stylesheet" type="text/css" href="css/common.css">
+     <!--引入vue-->
+    <script src="js/vue.js"></script>
+    <!--引入自己扩展js-->
+    <script src="js/element.js"></script>
+    <script src="js/index.js"></script>
+<body>
+    <!--页面容器-->
+    <div class="index-content" id="my" v-cloak>
+        <div class="banner">
+            <img v-for="(img,index) in imges" :src="img" v-show="index==num" :class="{'test':index==num}">
+        </div>
+        <div class="container" style="word-break: break-all;">
+            <p class="container_p1">题目信息</p>
+            <p v-for="(item,index) in questionsArry" v-show="index==flag" class="container_p2">{{index+1}}.
+                {{item}}</p>
+            <ul class="list-group">
+                <li class="list-group-item" v-for="(item,index) in chooseArry" v-show="index==flag">
+                    <template v-for='(value,indexs) in item'>
+                        <li class="list-group-item" @click="getChoose(index,indexs)" :class="{'chooseStyle':indexs==styleFlag}">{{indexs+1}}.&nbsp;&nbsp;{{value}}</li>
+                </template>
+                <div style="margin-top: 10px;float: right">
+                    <button type="button" class="btn btn-info btn-sm" @click="backQuestion(index)" v-show="flag!=0">上一题</button>&nbsp;&nbsp;
+                    <button type="button" class="btn btn-success btn-sm" @click="nextQuestion(index)" v-show="flag!=questionsArry.length-1">下一题</button>
+                    <button type="button" class="btn btn-mybtstyle btn-sm" @click="submit()" v-show="flag==questionsArry.length-1">提交</button>
+                </div>
+                </li>
+            </ul>
+            <div class="container">
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped"  :style="{width:progress+'%'}" >{{progress}}%</div> 
+                </div>
+                <div style="float: right;">{{flag+1}}/{{questionsArry.length}}</div>
+            </div>
+
+        </div>
+        <div class="banner">
+                <img src="img/logo.gif" class="banner_img">
+                <footer></footer>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+[v-cloak] {  /*解决第一次进入页面时出现代码等待渲染的情况*/
+    display: none !important;
+}
+*{
+    margin:0;
+    padding:0;
+    font-size: 0.8rem;
+}
+body {
+    font-size: 14px;
+    background: #fff;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+html,body {
+    max-width:720px;
+    height:100%;
+    margin:0 auto;
+}
+.index-content .banner {
+    position: relative;
+}
+.index-content .banner img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.index-content .index-category {
+    margin-top: 5%;
+}
+.index-content .index-category .category label {
+    display: block;
+    padding: 10% 0;
+    color: #999;
+}
+.container_p1{
+    margin-top:20px;
+    font-size: 1.2rem;
+}
+.container_p2{
+    line-height: 25px;
+    color: #ff6000;
+    letter-spacing: 1.2px;
+    font-size: 1rem;
+}
+.progress{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.banner_img{
+    position: absolute;
+    bottom: 0;
+    top:30px;
+}
+.btn-mybtstyle{
+    background: #ff6000;
+    border: 1px solid #ff6000;
+}
+.chooseStyle{
+    color: #ff6000;
+    border-right-color: #ff6000 !important;
+    border-right-width: 3px !important;
+}
+.el-message-box{
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 60% !important;
+    height:120px !important;
+}
+.el-message-box__content{
+    padding: 5px 15px !important;
+}
+.el-message-box__btns{
+    padding: 0px 15px 0 !important;
+}
+.el-icon-close{
+    display:none !important;
+}
+.el-button--primary{
+    padding: 6px 11px ;
+    background: #ff6000 !important;
+    border: 1px solid #ff6000 !important;
+}
+.el-message-box__title >span{
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+}
+.el-message-box__message p{
+    text-align: center;
+    padding-right: 20px;
+    letter-spacing: 1px;
+}
+.progress-bar{
+    background: #ff6000;
+}
+/*index-category end*/
+
